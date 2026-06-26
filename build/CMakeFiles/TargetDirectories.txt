@@ -1,0 +1,3 @@
+/home/bilal/Desktop/Internship-Teyzix/Network-Monitor/Network-Monitor/build/CMakeFiles/Network-Monitor.dir
+/home/bilal/Desktop/Internship-Teyzix/Network-Monitor/Network-Monitor/build/CMakeFiles/edit_cache.dir
+/home/bilal/Desktop/Internship-Teyzix/Network-Monitor/Network-Monitor/build/CMakeFiles/rebuild_cache.dir
