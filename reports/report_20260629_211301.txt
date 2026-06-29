@@ -1,0 +1,68 @@
+======================================================================
+    NETWORK MONITORING & LOG ANALYSIS REPORT
+======================================================================
+  Generated : 2026-06-29 21:13:01
+  Source    : /home/bilal/Desktop/Internship-Teyzix/Network-Monitor/Network-Monitor/file1.txt
+
+  [PROCESSING STATISTICS]
+----------------------------------------------------------------------
+  Total Lines Read            100
+  Valid Entries               100
+  Invalid/Corrupt Lines       0
+
+  [ACTIVITY OVERVIEW]
+----------------------------------------------------------------------
+  Total Requests              100
+  Unique IP Addresses         100
+  Error Responses (4xx/5xx)   44
+  Success Responses           56
+
+  [TOP 10 ACTIVE IPs]
+----------------------------------------------------------------------
+  1   192.168.182.238     1
+  2   196.60.68.96        1
+  3   196.43.133.83       1
+  4   192.168.9.116       1
+  5   192.168.60.0        1
+  6   192.168.57.18       1
+  7   192.168.57.122      1
+  8   192.168.46.89       1
+  9   192.168.37.55       1
+  10  192.168.253.63      1
+
+  [TOP 10 REQUESTED PATHS]
+----------------------------------------------------------------------
+  1   /api/users                    11
+  2   /home                         9
+  3   /products/category/clothing   9
+  4   /about                        8
+  5   /search                       8
+  6   /services                     8
+  7   /login                        7
+  8   /products                     7
+  9   /register                     6
+  10  /                             5
+
+  [SECURITY ALERTS (12 total)]
+----------------------------------------------------------------------
+  ID  IP                Type                      Severity  Description
+----------------------------------------------------------------------
+  1   10.126.10.68      BLOCKED_IP_ACCESS         CRITICAL  Access attempt from a blacklisted IP address.
+  2   10.126.10.68      DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /home
+  3   172.31.171.79     DANGEROUS_METHOD          MEDIUM    Dangerous method PUT used on sensitive path: /home
+  4   196.60.68.96      DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /home
+  5   172.21.75.232     DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /home
+  6   10.129.123.237    DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /api/users
+  7   196.43.133.83     DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /home?page=2
+  8   6.218.100.69      DANGEROUS_METHOD          MEDIUM    Dangerous method PUT used on sensitive path: /api/users
+  9   192.168.225.79    DANGEROUS_METHOD          MEDIUM    Dangerous method PUT used on sensitive path: /api/users
+  10  192.168.104.94    DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /api/users
+  11  9.38.32.171       DANGEROUS_METHOD          MEDIUM    Dangerous method DELETE used on sensitive path: /login
+  12  54.6.89.60        DANGEROUS_METHOD          MEDIUM    Dangerous method PUT used on sensitive path: /api/users
+
+  [RECOMMENDATIONS]
+----------------------------------------------------------------------
+  * Block flagged IPs at the firewall level immediately.
+  * High error rate detected — review application error handling.
+
+======================================================================

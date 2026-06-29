@@ -9,11 +9,47 @@
 #include <sstream>
 #include <limits>
 #include <algorithm>
+#include <unistd.h>   // readlink
+#include <climits>    // PATH_MAX
+#include <sys/stat.h> // stat, mkdir
 
 //  Constructor
 // ---------------------------------------------------------------------------
+
+// Resolve the absolute path to the project-level 'reports/' directory.
+// Strategy: read /proc/self/exe to get the binary path, then walk up until
+// we find a directory that contains a 'reports' sub-folder (or CMakeLists.txt),
+// and use that as the project root.  Falls back to "reports" (relative CWD) if
+// the resolution fails.
+static std::string resolveReportDir() {
+    char exePath[PATH_MAX] = {};
+    ssize_t len = readlink("/proc/self/exe", exePath, sizeof(exePath) - 1);
+    if (len <= 0) return "reports";
+    exePath[len] = '\0';
+
+    // Walk up from the binary's directory looking for CMakeLists.txt
+    std::string dir(exePath);
+    // Strip the filename component
+    auto lastSlash = dir.rfind('/');
+    if (lastSlash != std::string::npos) dir = dir.substr(0, lastSlash);
+
+    // Walk up at most 5 levels
+    for (int i = 0; i < 5; ++i) {
+        std::string candidate = dir + "/CMakeLists.txt";
+        struct stat st{};
+        if (stat(candidate.c_str(), &st) == 0) {
+            // Found project root — return its reports/ sub-path
+            return dir + "/reports";
+        }
+        auto pos = dir.rfind('/');
+        if (pos == std::string::npos || pos == 0) break;
+        dir = dir.substr(0, pos);
+    }
+    return "reports"; // fallback
+}
+
 Dashboard::Dashboard()
-    : reportDir_("reports") {}
+    : reportDir_(resolveReportDir()) {}
 
 // ---------------------------------------------------------------------------
 //  UI Helpers

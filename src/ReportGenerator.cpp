@@ -179,7 +179,7 @@ std::string ReportGenerator::exportTXT(const Report&             report,
     int rank = 1;
     for (const auto& [ip, cnt] : topIPs) {
         out << std::left
-            << std::setw(4)  << ("  " + std::to_string(rank++))
+            << std::setw(6)  << ("  " + std::to_string(rank++))
             << std::setw(20) << ip
             << cnt << '\n';
     }
@@ -191,7 +191,7 @@ std::string ReportGenerator::exportTXT(const Report&             report,
     rank = 1;
     for (const auto& [path, cnt] : topPths) {
         out << std::left
-            << std::setw(4)  << ("  " + std::to_string(rank++))
+            << std::setw(6)  << ("  " + std::to_string(rank++))
             << std::setw(30) << path
             << cnt << '\n';
     }

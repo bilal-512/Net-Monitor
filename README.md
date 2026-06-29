@@ -112,12 +112,3 @@ On launch, use the interactive menu:
 
 ---
 
-## Evaluation Criteria Coverage
-
-| Criterion | Implementation |
-|---|---|
-| Functionality & Feature Completion | All required features implemented |
-| Performance & Optimization | Single-pass analysis; STL containers; no dynamic allocations in hot paths |
-| Software Design & Architecture | 7-module separation of concerns; header/implementation split |
-| Code Quality & Documentation | Consistent comments, named constants, clear naming conventions |
-| Error Handling & Reliability | Per-line error isolation; graceful file open failures; input validation |
