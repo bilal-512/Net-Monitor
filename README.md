@@ -1,6 +1,6 @@
 # Network Monitoring & Log Analysis System
 
-**Task ID:** CPP-2 | **Domain:** C/C++ Development | **Teyzix Internship — June Batch**
+**Task ID:** CPP-2 | **Domain:** C/C++ Development | **Teyzix Internship**
 
 A high-performance, modular C++ console application for processing network activity logs, detecting threats, generating statistics, and producing actionable monitoring reports.
 
